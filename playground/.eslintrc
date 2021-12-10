@@ -1,0 +1,6 @@
+{
+  "extends": ["react-app"],
+  "parserOptions": {
+    "ecmaVersion": 2021
+  }
+}

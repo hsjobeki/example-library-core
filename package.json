@@ -1,0 +1,78 @@
+{
+  "name": "secunet-mui-theme",
+  "description": "",
+  "version": "1.0.0",
+  "files": [
+    "./dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.secunet.de/scm/edgepro/secunet-mui-theme.git"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.ci-cdindustry.lab.m.secunet.de/repository/npm-hosted/"
+  },
+  "author": "Johannes Kirschbauer",
+  "license": "ISC",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.js",
+  "dependencies": {
+    "@rollup/plugin-multi-entry": "^4.0.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.6.3",
+    "lodash": "^4.17.20",
+    "prop-types": "^15.7.2",
+    "react-scripts": "4.0.2",
+    "web-vitals": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@mui/material": "^5.2.1"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "build-watch": "rollup -c -w",
+    "start-playground": "cd playground && npm run start",
+    "i-all": "npm i && cd playground && npm i && cd docs && npm i",
+    "dev": "npm-run-all --parallel build-watch start-playground",
+    "docs": "cd docs && npm start",
+    "docs:install": "cd docs && npm install --also=dev --production=false --ci=false",
+    "docs:ci": "cd docs && npm ci",
+    "build-docs": "cd docs && npm run build",
+    "docs:live": "npm-run-all --parallel build-watch docs",
+    "docs:build": "npm run build && npm run build-docs"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@rollup/plugin-babel": "^5.2.3",
+    "@rollup/plugin-image": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.38.5",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-image": "^1.0.2",
+    "rollup-plugin-multi-input": "^1.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  }
+}
