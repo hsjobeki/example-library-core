@@ -3,7 +3,7 @@ node {
 
     checkout BbS(
         branches: [[name: "refs/heads/${env.BRANCH_NAME}"]],
-        credentialsId: 'nsturm-bitbucket-accces-token',
+        credentialsId: 'jenkins.industry',
         id: '9a586618-a470-464c-8580-358c7a93f12a',
         projectName: 'edgeweb',
         repositoryName: 'industry-ui-components',
