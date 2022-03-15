@@ -14,7 +14,21 @@ const gray = {
 };
 const white = "#ffffff";
 
+const defaultVariant = "outlined";
+
 const SecunetTheme = createTheme({
+  components: {
+    MuiFormControl: {
+      defaultProps: {
+        variant: defaultVariant,
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: defaultVariant,
+      },
+    },
+  },
   overrides: {
     MuiCssBaseline: {
       "@global": {
@@ -35,7 +49,24 @@ const SecunetTheme = createTheme({
     },
   },
   palette: {
-    // #später
+    mode: "light",
+    primary: {
+      main: "#000000",
+      light: "#2F384E",
+      dark: "#000000",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#ff5661",
+      main: "#D70F37",
+      dark: "#AD1035",
+      contrastText: "#000",
+      red: "#AD1035",
+      pink: "#D61486",
+      violet: "#882A7B",
+      darkViolet: "#611660",
+      blue: "#234596",
+    },
     action: {
       active: gray.dark04,
       selected: gray.light08,
@@ -54,23 +85,7 @@ const SecunetTheme = createTheme({
       secondary: gray.dark03,
       disabled: gray.medium05,
     },
-    primary: {
-      light: "#2F384E",
-      main: "#000000",
-      dark: "#000000",
-      contrastText: "#fff",
-    },
-    secondary: {
-      light: "#ff5661",
-      main: "#D70F37",
-      dark: "#AD1035",
-      contrastText: "#000",
-      red: "#AD1035",
-      pink: "#D61486",
-      violet: "#882A7B",
-      darkViolet: "#611660",
-      blue: "#234596",
-    },
+
     accent: {
       primary1: "#D70F37",
       primary2: "#0277A6",

@@ -6,14 +6,14 @@ import { SecunetTheme as theme } from "secunet-mui-theme";
 
 const useStyles = makeStyles((defaultTheme) => ({
   colorContainer: {
-    minHeight: theme.spacing(10),
+    // minHeight: theme.spacing(10),
   },
 }));
 
 const ColorPalette = () => {
   const classes = useStyles();
   const defaultTheme = useTheme();
-  console.log(defaultTheme.palette, theme);
+  console.log(defaultTheme, theme);
   const excluded = ["contrastThreshold", "tonalOffset", "type", "mode"];
   return (
     <div>
