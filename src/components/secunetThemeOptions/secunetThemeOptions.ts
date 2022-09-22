@@ -1,4 +1,54 @@
-import { createTheme } from "@mui/material/styles";
+import { ThemeOptions } from "@mui/material";
+
+
+declare module '@mui/material/styles' {
+  interface Palette {
+    security: {
+      topsecret: React.CSSProperties['color'],
+      secret: React.CSSProperties['color'],      
+      confidential: React.CSSProperties['color'],
+      unclassified: React.CSSProperties['color'],
+    } 
+  }
+
+  // allow configuration using `createTheme`
+  interface PaletteOptions {
+    security: {
+      topsecret: React.CSSProperties['color'],
+      secret: React.CSSProperties['color'],      
+      restricted: React.CSSProperties['color'],      
+      confidential: React.CSSProperties['color'],
+      unclassified: React.CSSProperties['color'],
+    } 
+  }
+  
+  // interface PaletteColor {
+  //   red?: string;
+  //   pink?: string;
+  //   violet?: string;
+  //   darkViolet?: string;
+  //   blue?: string;
+  // }
+  // interface SimplePaletteColorOptions {
+  //   red?: string;
+  //   pink?: string;
+  //   violet?: string;
+  //   darkViolet?: string;
+  //   blue?: string;
+  // }
+
+  // interface ColorPartial {
+  //   dark02: string,
+  //   dark03: string,
+  //   dark04: string,
+  //   medium05: string,
+  //   medium06: string,
+  //   medium07: string,
+  //   light08: string,
+  //   light09: string
+  // }
+
+}
 
 const gray = {
   dark02: "#2F384E",
@@ -16,7 +66,7 @@ const white = "#ffffff";
 
 const defaultVariant = "outlined";
 
-const SecunetTheme = createTheme({
+const secunetThemeOptions: ThemeOptions = {
   components: {
     MuiFormControl: {
       defaultProps: {
@@ -29,25 +79,25 @@ const SecunetTheme = createTheme({
       },
     },
   },
-  overrides: {
-    MuiCssBaseline: {
-      "@global": {
-        "*::-webkit-scrollbar": {
-          width: "0.8em",
-        },
-        "*::-webkit-scrollbar-track": {
-          background: gray.light09,
-        },
-        "*::-webkit-scrollbar-thumb": {
-          background: gray.medium05,
-          borderRadius: "0.4em",
-        },
-        "*::-webkit-scrollbar-thumb:hover": {
-          background: gray.dark04,
-        },
-      },
-    },
-  },
+  // overrides: {
+  //   MuiCssBaseline: {
+  //     "@global": {
+  //       "*::-webkit-scrollbar": {
+  //         width: "0.8em",
+  //       },
+  //       "*::-webkit-scrollbar-track": {
+  //         background: gray.light09,
+  //       },
+  //       "*::-webkit-scrollbar-thumb": {
+  //         background: gray.medium05,
+  //         borderRadius: "0.4em",
+  //       },
+  //       "*::-webkit-scrollbar-thumb:hover": {
+  //         background: gray.dark04,
+  //       },
+  //     },
+  //   },
+  // },
   palette: {
     mode: "light",
     primary: {
@@ -61,11 +111,6 @@ const SecunetTheme = createTheme({
       main: "#D70F37",
       dark: "#AD1035",
       contrastText: "#000",
-      red: "#AD1035",
-      pink: "#D61486",
-      violet: "#882A7B",
-      darkViolet: "#611660",
-      blue: "#234596",
     },
     action: {
       active: gray.dark04,
@@ -86,11 +131,7 @@ const SecunetTheme = createTheme({
       disabled: gray.medium05,
     },
 
-    accent: {
-      primary1: "#D70F37",
-      primary2: "#0277A6",
-      primary3: "#46B9E8",
-    },
+    
     grey: {
       // 50: "#fafafa",
       100: gray.light09,
@@ -107,16 +148,6 @@ const SecunetTheme = createTheme({
       // A400: "#303030",
       // A700: "#616161",
 
-      dark02: "#2F384E",
-      dark03: "#485160",
-      dark04: "#727987",
-
-      medium05: "#ACB1B9",
-      medium06: "#C3C7CD",
-      medium07: "#E1E2E3",
-
-      light08: "#EAEBED",
-      light09: "#F0F0F1",
     },
     success: {
       main: "#3C992E",
@@ -146,6 +177,6 @@ const SecunetTheme = createTheme({
       unclassified: "#ACB1B9",
     },
   },
-});
+};
 
-export default SecunetTheme;
+export default secunetThemeOptions;

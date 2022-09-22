@@ -1,36 +1,42 @@
 import React from "react";
 import { useTheme } from "@mui/material/styles";
-import { Grid } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { SecunetTheme as theme } from "secunet-mui-theme";
+import { createTheme, Grid } from "@mui/material";
+import { secunetThemeOptions } from "secunet-mui-theme";
 
-const useStyles = makeStyles((defaultTheme) => ({
-  colorContainer: {
-    // minHeight: theme.spacing(10),
-  },
-}));
+const secunetTheme = createTheme(secunetThemeOptions);
 
 const ColorPalette = () => {
-  const classes = useStyles();
   const defaultTheme = useTheme();
-  console.log(defaultTheme, theme);
-  const excluded = ["contrastThreshold", "tonalOffset", "type", "mode"];
+  console.log({ defaultTheme, secunetTheme });
+  const excluded = [
+    "contrastThreshold",
+    "getContrastText",
+    "augmentColor",
+    "tonalOffset",
+    "type",
+    "mode",
+  ];
+  const excludedShades = [
+    "primaryChannel",
+    "secondaryChannel",
+    "activeChannel",
+    "selectedChannel",
+  ];
   return (
     <div>
       <Grid container spacing={1}>
-        {Object.keys(theme.palette).map((key) => {
-          const colors = theme.palette[key];
+        {Object.keys(secunetTheme.palette).map((key) => {
+          const colors = secunetTheme.palette[key];
+
           if (typeof colors === "string" && !excluded.includes(key)) {
-            // console.log(key, colors);
             return (
               <Grid
                 key={key}
                 item
                 xs={12}
-                className={classes.colorContainer}
                 style={{
                   background: colors,
-                  color: theme.palette.getContrastText(colors),
+                  color: secunetTheme.palette.getContrastText(colors),
                 }}
               >
                 {key}
@@ -42,24 +48,25 @@ const ColorPalette = () => {
                 <Grid container>
                   {Object.keys(colors).map((shade) => {
                     const shadedColor = colors[shade];
-                    // console.log(key,colors, shadedColor);
                     if (
                       typeof shadedColor === "string" &&
-                      !excluded.includes(key)
+                      !excluded.includes(key) &&
+                      !excludedShades.includes(shade)
                     ) {
+                      console.log({ key, colors, shade, shadedColor });
                       return (
                         <Grid
                           key={shade}
                           item
                           xs={4}
-                          className={classes.colorContainer}
                           style={{
                             background: shadedColor,
-                            color: theme.palette.getContrastText(shadedColor),
+                            color:
+                              secunetTheme.palette.getContrastText(shadedColor),
                           }}
                         >
                           <div>{`${key}.${shade}`}</div>
-                          <div>{`value: ${theme.palette[key][shade]}`}</div>
+                          <div>{`value: ${secunetTheme.palette[key][shade]}`}</div>
                           <div>{`usage: theme.palette.${key}.${shade}`}</div>
                         </Grid>
                       );
