@@ -3,5 +3,5 @@ let
   pkgs = import sources.nixpkgs { overlays = [ (import ./overlay.nix) ]; };
 in
 {
-  inherit (pkgs.secunet) secunet-mui-theme ;
+  inherit (pkgs.secunet) mui-theme ;
 }

@@ -9,7 +9,7 @@ let
 in
 {
   secunet = prev.secunet or { } // {
-    secunet-mui-theme = final.callPackage ./build.nix {
+    mui-theme = final.callPackage ./build.nix {
       inherit package nodejs nodeDependencies gitignoreSource;
     };
   };

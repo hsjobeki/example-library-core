@@ -1,5 +1,5 @@
 const path = require("path");
-const theme = require("./styleguidist.theme");
+const theme = require("./styleguidist.theme.ts");
 
 module.exports = {
   title: "secunet-mui-theme",
