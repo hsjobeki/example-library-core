@@ -156,14 +156,14 @@ const secunetThemeOptions: ThemeOptions = {
       light: "#FBC91D",
     },
     error: {
+      light: "#ff5661",
       main: "#D70F37",
-      dark: "#D70F37",
-      light: "#D70F37",
+      dark: "#9d0012",
     },
     info: {
+      light: "#5e88ca",
       main: "#275B99",
       dark: "#00326a",
-      light: "#5e88ca",
     },
     security: {
       topsecret: "#3C992E",
