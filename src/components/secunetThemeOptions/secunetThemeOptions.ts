@@ -146,14 +146,14 @@ const secunetThemeOptions: ThemeOptions = {
       // A700: "#616161",
     },
     success: {
+      light: "#70cb5c",
       main: "#3C992E",
-      dark: "#3C992E",
-      light: "#3C992E",
+      dark: "#006a00",
     },
     warning: {
+      light: "#fffc5a",
       main: "#FBC91D",
-      dark: "#FBC91D",
-      light: "#FBC91D",
+      dark: "#c39900",
     },
     error: {
       light: "#ff5661",
