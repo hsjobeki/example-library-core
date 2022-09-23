@@ -25,13 +25,13 @@ This theme provides the following colors to Material UI (MUI):
   grid-template-columns: auto auto auto;
   padding: 10px;">
   <div style="background:#59627a;padding:1em;margin:8px">
-    <span >Primary.light: #59627a</span>
+    <span >primary.light: #59627a</span>
   </div>
   <div style="background:#2f384e;padding:1em;margin:8px">
-    <span >Primary.main: #2f384e</span>
+    <span >primary.main: #2f384e</span>
   </div>
   <div style="background:#071226;padding:1em;margin:8px">
-    <span >Primary.dark: #071226</span>
+    <span >primary.dark: #071226</span>
   </div>
   <div style="background:#ff5661;padding:1em;margin:8px">
     <span >secondary.light: #ff5661</span>
