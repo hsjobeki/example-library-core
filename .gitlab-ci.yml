@@ -1,0 +1,37 @@
+stages:
+  - generate
+  - run
+
+# Nix builds need to be able to access our Gitlab to fetch repositories.
+before_script:
+  - HOME=$PWD git config --global --add url.https://gitlab-ci-token:${CI_JOB_TOKEN}@git.seven.secucloud.secunet.com/.insteadOf "git@git.seven.secucloud.secunet.com:"
+  - HOME=$PWD git config --global --add url.https://gitlab-ci-token:${CI_JOB_TOKEN}@git.seven.secucloud.secunet.com/.insteadOf "ssh://git@git.seven.secucloud.secunet.com/"
+
+generate_ci:
+  stage: generate
+  script:
+    - |
+      HOME=$PWD NIX_PATH= nix-instantiate \
+        --eval \
+        --json \
+        --strict \
+        --read-write-mode \
+        nix/gitlab-ci.nix \
+        --argstr releaseNixPath ./nix/release.nix \
+        -A output \
+        > generated-config.yml
+  artifacts:
+    paths:
+      - generated-config.yml
+  tags:
+    - nix
+
+run_ci:
+  stage: run
+  needs:
+    - generate_ci
+  trigger:
+    include:
+      - artifact: generated-config.yml
+        job: generate_ci
+    strategy: depend
