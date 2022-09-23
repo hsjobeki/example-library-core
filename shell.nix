@@ -15,4 +15,9 @@ mkShell {
     nodePackages.typescript
     nodePackages.node2nix
   ];
+
+  shellHook = ''
+    ${(import ./nix/pre-commit.nix).pre-commit-check.shellHook}
+  '';
+
 }

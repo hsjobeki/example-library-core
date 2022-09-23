@@ -1,27 +1,26 @@
 import { ThemeOptions } from "@mui/material";
 
-
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Palette {
     security: {
-      topsecret: React.CSSProperties['color'],
-      secret: React.CSSProperties['color'],      
-      confidential: React.CSSProperties['color'],
-      unclassified: React.CSSProperties['color'],
-    } 
+      topsecret: React.CSSProperties["color"];
+      secret: React.CSSProperties["color"];
+      confidential: React.CSSProperties["color"];
+      unclassified: React.CSSProperties["color"];
+    };
   }
 
   // allow configuration using `createTheme`
   interface PaletteOptions {
     security: {
-      topsecret: React.CSSProperties['color'],
-      secret: React.CSSProperties['color'],      
-      restricted: React.CSSProperties['color'],      
-      confidential: React.CSSProperties['color'],
-      unclassified: React.CSSProperties['color'],
-    } 
+      topsecret: React.CSSProperties["color"];
+      secret: React.CSSProperties["color"];
+      restricted: React.CSSProperties["color"];
+      confidential: React.CSSProperties["color"];
+      unclassified: React.CSSProperties["color"];
+    };
   }
-  
+
   // interface PaletteColor {
   //   red?: string;
   //   pink?: string;
@@ -47,7 +46,6 @@ declare module '@mui/material/styles' {
   //   light08: string,
   //   light09: string
   // }
-
 }
 
 const gray = {
@@ -131,7 +129,6 @@ const secunetThemeOptions: ThemeOptions = {
       disabled: gray.medium05,
     },
 
-    
     grey: {
       // 50: "#fafafa",
       100: gray.light09,
@@ -147,7 +144,6 @@ const secunetThemeOptions: ThemeOptions = {
       // A200: "#aaaaaa",
       // A400: "#303030",
       // A700: "#616161",
-
     },
     success: {
       main: "#3C992E",
