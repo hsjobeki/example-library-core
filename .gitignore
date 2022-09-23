@@ -23,6 +23,7 @@
 /.direnv
 /result
 /result-*
+.pre-commit-config.yaml
 
 npm-debug.log*
 yarn-debug.log*
