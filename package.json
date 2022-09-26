@@ -1,6 +1,6 @@
 {
-  "name": "secunet-mui-theme",
-  "description": "",
+  "name": "@secunet/mui-theme",
+  "description": "secunet styleguide as mui theme.",
   "author": "Johannes Kirschbauer",
   "license": "ISC",
   "version": "1.0.0",
@@ -14,6 +14,7 @@
     "@mui/material": "^5.10.6"
   },
   "scripts": {
+    "build": "rollup -c",
     "rollup": "rollup -c",
     "update:nix": "node2nix -d -l package-lock.json -e nix/node-env.nix -o nix/node-packages.nix -c nix/node.nix"
   },
