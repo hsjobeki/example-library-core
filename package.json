@@ -10,7 +10,11 @@
     "src"
   ],
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "rollup.config.js",
+    "tsconfig.json",
+    "package-lock.json"
   ],
   "types": "dist/index.d.ts",
   "peerDependencies": {
