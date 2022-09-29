@@ -21,7 +21,6 @@
     "@mui/material": "^5.10.6"
   },
   "scripts": {
-    "install": "npm install",
     "build": "npm run rollup",
     "rollup": "rollup -c",
     "update:nix": "node2nix -d -l package-lock.json -e nix/node-env.nix -o nix/node-packages.nix -c nix/node.nix"
