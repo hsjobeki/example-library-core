@@ -10,9 +10,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "dependencies": {
-    "cowsay": "^1.5.0"
-  },
+  "dependencies": {},
   "scripts": {
     "build": "tsc"
   },
